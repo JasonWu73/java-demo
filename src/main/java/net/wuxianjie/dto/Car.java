@@ -1,4 +1,4 @@
-package net.wuxianjie.java8.dto;
+package net.wuxianjie.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

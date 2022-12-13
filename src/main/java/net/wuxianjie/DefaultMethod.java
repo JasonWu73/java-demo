@@ -1,4 +1,4 @@
-package net.wuxianjie.java8;
+package net.wuxianjie;
 
 import java.util.Date;
 

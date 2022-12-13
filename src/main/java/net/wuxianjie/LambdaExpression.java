@@ -1,7 +1,7 @@
-package net.wuxianjie.java8;
+package net.wuxianjie;
 
 import cn.hutool.core.convert.Convert;
-import net.wuxianjie.java8.dto.Car;
+import net.wuxianjie.dto.Car;
 
 import java.util.ArrayList;
 import java.util.List;
