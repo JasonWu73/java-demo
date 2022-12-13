@@ -27,9 +27,34 @@ public class SwitchExpression {
         }
     }
 
-    public static void main(String[] args) {
-        oldSwitchStatement(1);
+    public static int switchYield(int code) {
+        return switch (code) {
+            case 0 -> {
+                System.out.println(code + " is stdin");
+                yield 0;
+            }
+            case 1 -> {
+                System.out.println(code + " is stdout");
+                yield 1;
+            }
+            case 2 -> {
+                System.out.println(code + " is stderr");
+                yield 2;
+            }
+            default -> {
+                System.out.println("unknown code " + code);
+                yield code;
+            }
+        };
+    }
 
-        newSwitchStatement(1);
+    public static void main(String[] args) {
+        int code = 1;
+        oldSwitchStatement(code);
+
+        newSwitchStatement(code);
+
+        int i = switchYield(code);
+        System.out.println("yield: " + i);
     }
 }
