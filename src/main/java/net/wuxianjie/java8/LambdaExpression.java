@@ -25,19 +25,11 @@ public class LambdaExpression {
 
     public static void main(String[] args) {
         LambdaExpression lambdaExpression = new LambdaExpression();
-        List<Car> cars = generateFakeData();
+        List<Car> cars = Car.generateFakeData();
         List<Car> carsOldWay = lambdaExpression.findCarsOldWay(cars);
         System.out.println(Convert.toStr(carsOldWay));
 
         List<Car> carsUsingLambda = lambdaExpression.findCarsUsingLambda(cars);
         System.out.println(Convert.toStr(carsUsingLambda));
-    }
-
-    private static List<Car> generateFakeData() {
-        List<Car> cars = new ArrayList<>();
-        cars.add(new Car("Car1", 4000));
-        cars.add(new Car("Car2", 5000));
-        cars.add(new Car("Car3", 6000));
-        return cars;
     }
 }
