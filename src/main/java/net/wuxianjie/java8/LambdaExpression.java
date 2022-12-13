@@ -5,13 +5,14 @@ import net.wuxianjie.java8.dto.Car;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class LambdaExpression {
 
     public List<Car> findCarsOldWay(List<Car> cars) {
         List<Car> selectedCars = new ArrayList<>();
         for (Car car : cars) {
-            if (car.kilometer() < 5_000) {
+            if (car.getKilometer() < 5_000) {
                 selectedCars.add(car);
             }
         }
@@ -19,8 +20,8 @@ public class LambdaExpression {
     }
 
     public List<Car> findCarsUsingLambda(List<Car> cars) {
-        return cars.stream().filter(car -> car.kilometer() < 5_000)
-                .toList();
+        return cars.stream().filter(car -> car.getKilometer() < 5_000)
+                .collect(Collectors.toList());
     }
 
     public static void main(String[] args) {

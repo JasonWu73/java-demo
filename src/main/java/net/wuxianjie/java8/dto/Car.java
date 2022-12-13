@@ -1,9 +1,20 @@
 package net.wuxianjie.java8.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public record Car(String name, int kilometer) {
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class Car {
+
+    private String name;
+    private int kilometer;
+
     public static List<Car> generateFakeData() {
         List<Car> cars = new ArrayList<>();
         cars.add(new Car("Car1", 4000));
